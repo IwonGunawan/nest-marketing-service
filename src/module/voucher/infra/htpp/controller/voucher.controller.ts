@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Request } from "@nestjs/common";
+import { Body, Controller, Get, Post, Request } from "@nestjs/common";
+import { VoucherCreateDto } from "src/module/voucher/dtos/voucher-create.dto";
 import { VoucherService } from "src/module/voucher/service/voucher.service";
 
 @Controller('vouchers')
@@ -6,7 +7,7 @@ export class VoucherController{
 
     constructor(private readonly voucherService: VoucherService){}
 
-    @Get('list')
+    @Get()
     async listVoucher(@Request() req){   
         const params = {
             page       : typeof req.query.page != 'undefined' && req.query.page != '' ? req.query.page : 1,
@@ -26,9 +27,13 @@ export class VoucherController{
         }
     }
 
-    @Post('create')
-    createVoucher(){
-
+    @Post()
+    async createVoucher(@Body() body: VoucherCreateDto){
+        return{
+            status      : 'success',
+            message     : 'Data berhasil disimpan',
+            result      : await this.voucherService.create(body)
+        }
     }
 
 }
