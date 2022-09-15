@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Request } from "@nestjs/common";
+import { Body, Controller, Request, Get, Post, Put, Delete } from "@nestjs/common";
 import { VoucherCreateDto } from "src/module/voucher/dtos/voucher-create.dto";
 import { VoucherService } from "src/module/voucher/service/voucher.service";
 

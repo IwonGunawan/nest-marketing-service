@@ -147,17 +147,3 @@ export class VoucherRepository{
  * order by ok
  * when condition query 
  */
-
-/*
-async getListVoucher(): Promise<PromoModel[]>{
-    return this.promoModel.findAll()
-} 
-
-async getListVoucher(): Promise<any[]>{
-    const [result] = await this.sequelize.query(
-        'SELECT id, source, type FROM promo ORDER BY id ASC LIMIT 3'
-    )
-
-    return result;
-}
-*/

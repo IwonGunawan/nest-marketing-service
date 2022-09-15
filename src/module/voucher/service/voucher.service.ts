@@ -120,3 +120,16 @@ export class VoucherService{
         return createPromo.dataValues
     }
 }
+
+
+/** 
+* proses create dilakukan dengan transaction         
+* check image, isNoExist gunakan default
+* jika user type 2 ok
+* * insert into table segments ok
+* * insert into table customer_segments ok
+* insert into table promo ok
+* jika items > 0 ok
+* * insert into table promo_products ok
+* insert into table promo_status_log ok
+*/
